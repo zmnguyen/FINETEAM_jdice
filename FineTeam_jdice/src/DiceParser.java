@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 public class DiceParser{
     /* this is a helper class to manage the input "stream"*/
     private static class StringStream{
-//	StringBuffer buff;
+	StringBuffer buff; //bo chu thich
 	public StringStream(String s){
 	    buff=new StringBuffer(s);
 	}
