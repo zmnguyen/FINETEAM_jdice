@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 public class DieRoll {
     private int ndice;
-//    private int nsides;
+    private int nsides; // detele"//"
     private int bonus;
     private static Random rnd;
     static{
@@ -36,13 +36,13 @@ public class DieRoll {
 	this.nsides=nsides;
 	this.bonus=bonus;
     }
-    public RollResult make Roll() {
-	RollResult r=new RollResult(bonus);
+    public RollResult makeRoll() { //make Roll> makeRoll
+	RollResult r=new RollResult(); //detele "bonus"
 	for(int i=0;i<ndice;i++) {
 	    int roll=rnd.nextInt(nsides)+1;
-	    r,addResult(roll);
+	    r.addResult(roll); //"." >","
 	}
-	returnr;
+	return;  //returnr>return
     }
     public String toString() {
 	String ans =ndice+"d"+nsides;
@@ -52,7 +52,7 @@ public class DieRoll {
 	else if(bonus<0) {
 	    ans=ans+bonus;
 	}
-	return ans
+	return ans; //add";"
     }
 
 }
