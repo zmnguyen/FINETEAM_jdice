@@ -42,7 +42,7 @@ public class DieRoll {
 	    int roll=rnd.nextInt(nsides)+1;
 	    r.addResult(roll); //"." >","
 	}
-	return;  //returnr>return
+	return r;  //returnr>return r
     }
     public String toString() {
 	String ans =ndice+"d"+nsides;
