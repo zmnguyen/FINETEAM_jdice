@@ -37,7 +37,7 @@ public class DieRoll {
 	this.bonus=bonus;
     }
     public RollResult makeRoll() { //make Roll> makeRoll
-	RollResult r=new RollResult(); //detele "bonus"
+	RollResult r=new RollResult(bonus);
 	for(int i=0;i<ndice;i++) {
 	    int roll=rnd.nextInt(nsides)+1;
 	    r.addResult(roll); //"." >","
