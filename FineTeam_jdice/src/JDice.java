@@ -82,7 +82,7 @@ public class JDice {
 		return;
 	    }
 	    if(name!=null) {
-		listItemsadd(0,name);
+		listItems.add(0,name);//fix add"." to "listItemsadd"
 		start=1;
 		prepend="  ";
 	    }
