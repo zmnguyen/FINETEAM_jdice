@@ -21,19 +21,19 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
 
-publicclass Roll Result {
+public class RollResult {// thiếu khoảng các giữa publicclass dư khoảng cách giữa Roll Result
     int total;
     int modifier;
-//    Vector<Integer> rolls;
+    Vector<Integer> rolls; // dư dấu //
     private RollResult(int total, 
 		       int modifier,
 		       Vector<Integer> rolls){
-	thistotal=total;
+	this.total=total;// thiếu dấu . giữa thistotal
 	this.modifier=modifier;
 	this.rolls=rolls;
     }
     public RollResult(int bonus) {
-	this.total=bonus
+	this.total=bonus; // thiếu ;
 	this.modifier=bonus;
 	rolls=new Vector<Integer>();
     }
