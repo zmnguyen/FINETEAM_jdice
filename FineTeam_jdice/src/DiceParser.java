@@ -47,7 +47,7 @@ public class DiceParser{
 	}
 	public Integer readInt(){
 	    int index=0;
-	    char curr
+	    char curr; // fix add";"
 	    munchWhiteSpace();
 	    while(index<buff.length()){
 		curr=buff.charAt(index);
@@ -97,7 +97,7 @@ public class DiceParser{
 	    return new StringStream(buff.toString());
 	}
 	public void restore(StringStream ss){
-	    thisbuff=new StringBuffer(ss.buff);
+	    this.buff=new StringBuffer(ss.buff); //fix "thisbuff"
 	}
 	public String toString(){
 	    return buff.toString();
@@ -157,7 +157,7 @@ public class DiceParser{
 	    return null;
 	}
 	Vector<DieRoll> ans=new Vector<DieRoll>();
-	fore(int i=0;i<num;i++){
+	for(int i=0;i<num;i++){ // fix "fore"
 	    ans.add(dr);
 	}
 	return ans;
@@ -167,15 +167,15 @@ public class DiceParser{
      *       XXXX| FA(die,bonus,N) dtail
      */
     private static DieRoll parseDice(StringStream ss){
-	return parseDTail(parseDiceInner(ss),ss);
+    	return parseDTail(parseDiceInner(ss),ss);
     }
     private static DieRoll parseDiceInner(StringStream ss){
-	/*if(checkAndEat("FA(")) {
-	    DieRoll d=parseFA(ss);
+	if(ss.checkAndEat("FA")) { // fix checkAndEat("FA(")
+	    DieRoll d = parseDice(ss); //fix parseFA
 	    if(d==null)
 		return null;
 	    return parseDTail(d,ss);
-	    }*/
+    }
 	Integer num=ss.getInt();
 	int dsides;
 	int ndice;
@@ -205,8 +205,7 @@ public class DiceParser{
 			   bonus);	
 	
     }
-    private static DieRoll parseDTail(DieRoll r1,
-				StringStream ss) {
+    private static DieRoll parseDTail(DieRoll r1, StringStream ss) {
 	if(r1==null)
 	    return null;
 	if(ss.checkAndEat("&")) {
@@ -217,7 +216,7 @@ public class DiceParser{
 	    return r1;
 	}
     }
-    private staticvoid test(String s) {
+    private static void test(String s) { //fix staticvoid
 	Vector<DieRoll> v=parseRoll(s);
 	int i;
 	if(v==null)
