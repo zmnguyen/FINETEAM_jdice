@@ -71,7 +71,7 @@ public class JDice {
 	    listItems.clear(); //fix add";"
 	    resultList.setListData(listItems);
 	}
-	privatevoid doRoll(String name,
+	private void doRoll(String name,//fix "privatevoid" -> "private void"
 			    String diceString) {
 	    String prepend="";
 	    int start=0;
