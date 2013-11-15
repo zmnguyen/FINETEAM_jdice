@@ -30,7 +30,7 @@ public class JDice {
     }
     private static class JDiceListener implements ActionListener {
 	Vector<String> listItems;
-//	JList resultList;
+	JList resultList; //fix delete "//"
 	JComboBox inputBox;
 	long lastEvent; /* hack to prevent double events with text
 			   entry */
@@ -68,7 +68,7 @@ public class JDice {
 	}
 	private void doClear(){
 	    resultList.clearSelection();
-	    listItems.clear()
+	    listItems.clear(); //fix add";"
 	    resultList.setListData(listItems);
 	}
 	privatevoid doRoll(String name,
