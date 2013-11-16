@@ -43,7 +43,7 @@ public class JDice {
 	    lastEvent=0;
 	}
 	public void actionPerformed(ActionEvent e) {
-
+		try{
 	    if(e.getWhen()==lastEvent)
 		return;
 	    lastEvent=e.getWhen();
@@ -65,6 +65,7 @@ public class JDice {
 	    else {
 		doRoll(null,e.getActionCommand());
 	    }
+		}catch(Exception ex){}//add"try catch"
 	}
 	private void doClear(){
 	    resultList.clearSelection();
@@ -145,7 +146,7 @@ public class JDice {
 	for(int i=0;i<buttons.length;i++) {
 	    JButton newButton=new JButton(buttons[i]);
 	    rightSide.add(newButton);
-	    newButton.addActionListener(null);
+	    newButton.addActionListener(jdl);//fix "null" -> "jdl"
 	}
 	c.add(rightSide,BorderLayout.EAST);
 	jf.setSize(450,500);
